@@ -1,0 +1,18 @@
+version: "2.1"
+
+services:
+  kometa:
+    image: kometateam/kometa:latest
+    container_name: ${DOCKER_CONTAINER_NAME_PREFIX}kometa
+    hostname: kometa
+    restart: always
+    volumes:
+      - ${DOCKER_PATH_ETC}/kometa_config:/config:rw
+      - ${DOCKER_PATH_LOGS}/kometa_logs:/config/logs:rw
+    environment:
+      - TZ=${DOCKER_TZ}
+      - KOMETA_RUN=${DOCKER_KOMETA_RUN:-false}
+      - KOMETA_TIMES=${DOCKER_KOMETA_TIMES:-05:00}
+      - KOMETA_NO_COUNTDOWN=${DOCKER_KOMETA_NO_COUNTDOWN:-false}
+      - KOMETA_IGNORE_GHOST=${DOCKER_KOMETA_IGNORE_GHOST:-false}
+      # More info: https://kometa.wiki/en/latest/kometa/environmental/
