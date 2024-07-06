@@ -2,7 +2,7 @@ version: "2.1"
 
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
+    image: 	lscr.io/linuxserver/qbittorrent:4.6.4
     container_name: ${DOCKER_CONTAINER_NAME_PREFIX}qbittorrent
     hostname: qbittorrent
     healthcheck:
