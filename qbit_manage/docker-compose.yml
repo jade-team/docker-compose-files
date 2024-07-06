@@ -2,7 +2,7 @@ version: "2"
 
 services:
   qbit_manage:
-    image: bobokun/qbit_manage:latest
+    image: 	bobokun/qbit_manage:v4.1.7
     container_name: ${DOCKER_CONTAINER_NAME_PREFIX}qbit_manage
     hostname: qbit_manage
     restart: always
